@@ -19,7 +19,6 @@ function init(){
 	message.do = 'init';
 	message.config = config;
 	worker.postMessage(message);
-	change_search();
 }
 
 //Redraw the screen based on the state of the game, which is passed from the worker
@@ -141,13 +140,5 @@ function start(){
 function stop(){
 	var message = new Object();
 	message.do = 'stop';
-	worker.postMessage(message);
-}
-
-//update the type of search we want the worker to use.
-function change_search(){
-	var message = new Object();
-	message.do = 'set_search';
-	message.search = document.getElementById('search').value;
 	worker.postMessage(message);
 }

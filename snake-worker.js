@@ -1,12 +1,163 @@
 /**
-This is the worker. It is used by a1.html to perform all the CPU-intensive
+This is the snakes brain!
+Tell the snake where to go!
+
+**/
+
+function snake_brain() {
+	if (apple_is_above()) {
+		if (stump_is_above()) {
+			move_left()
+		}
+		else {
+			move_up()
+		}
+	}
+	else if (apple_is_below()) {
+		if (stump_is_below()) {
+			move_left()
+		}
+		else {
+			move_down()
+		}
+	}
+	else if (apple_is_left()) {
+		move_left()
+	}
+	else if (apple_is_right()) {
+		move_right()
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+All of the code below this should not be touched.
+If you like you can have a look, but these are here to help you snake get the apple!
+**/
+
+
+function get_apple_point() {
+	for(var x=0;x<config.grid_size;x++){
+		for(var y=0;y<config.grid_size;y++){
+			if(squares[x][y] == 2) {
+				apple_point = new Point(x,y);
+				return apple_point
+			}
+		}
+	}
+}
+
+function apple_is_above() {
+	apple = get_apple_point();
+	snake_head = snake[0];
+	if (apple.y < snake_head.y) {
+		return true
+	}
+	return false
+}
+
+function apple_is_below() {
+	apple = get_apple_point();
+	snake_head = snake[0];
+	if (apple.y > snake_head.y) {
+		return true
+	}
+	return false
+}
+
+function apple_is_left() {
+	apple = get_apple_point();
+	snake_head = snake[0];
+	if (apple.x < snake_head.x) {
+		return true
+	}
+	return false
+}
+
+function apple_is_right() {
+	apple = get_apple_point();
+	snake_head = snake[0];
+	if (apple.x > snake_head.x) {
+		return true
+	}
+	return false
+}
+
+function stump_is_above() {
+	snake_head = snake[0];
+	square_above = squares[snake_head.x][snake_head.y - 1]
+	if (square_above == stump_square) {
+		return true
+	}
+	return false
+}
+
+function stump_is_below() {
+	snake_head = snake[0];
+	square_below = squares[snake_head.x][snake_head.y + 1]
+	if (square_below == stump_square) {
+		return true
+	}
+	return false
+}
+
+function stump_is_left() {
+	snake_head = snake[0];
+	square_left = squares[snake_head.x - 1][snake_head.y]
+	if (square_left == stump_square) {
+		return true
+	}
+	return false
+}
+
+function stump_is_right() {
+	snake_head = snake[0];
+	square_right = squares[snake_head.x + 1][snake_head.y]
+	if (square_right == stump_square) {
+		return true
+	}
+	return false
+}
+
+function move_up() {
+	point = new Point(snake[0].x, snake[0].y - 1)
+	moves.unshift(point)
+}
+
+function move_down() {
+	point = new Point(snake[0].x, snake[0].y + 1)
+	moves.unshift(point)
+}
+
+function move_left() {
+	point = new Point(snake[0].x - 1, snake[0].y)
+	moves.unshift(point)
+}
+
+function move_right() {
+	point = new Point(snake[0].x + 1, snake[0].y)
+	moves.unshift(point)
+}
+
+/**
+This is the worker. It is used by index.html to perform all the CPU-intensive
 processing, so the GUI will remain responsive. This worker maintains the state
 of the grid, position of the elements on the grid, and performs the computations
 that are used to find the path that will be taken by the snake, and carries out the
 movement of the snake.
 
-The worker is initialized and given instructions by a1.html.
-The worker sends the state information back to a1.html to be drawn on the screen
+The worker is initialized and given instructions by index.html.
+The worker sends the state information back to index.html to be drawn on the screen
   so the user can see what the current state is.
 **/
 
@@ -32,6 +183,10 @@ stats.moves = 0;
 stats.food = 0;
 stats.count = 0;
 var squares;
+var empty_square = 0;
+var food_square = 2;
+var wall_square = 3;
+var stump_square = 4;
 var snake;
 var food;
 var moves = new Array();
@@ -81,6 +236,7 @@ onmessage = function(event) {
 	}
 }
 
+
 //This function runs repeatedly. Checks if we should move, or search for more moves, and carries out the moves.
 function run(){
 	//stop at 100 food, for statistical purposes:
@@ -90,24 +246,7 @@ function run(){
 	}
 	//moves is a list of moves that the snake is to carry out. IF there are no moves left, then run a search to find more.
 	if(moves.length == 0){
-		//no moves left, so search for more based on the current search selected.
-		switch(config.search){
-			case 'BFS':
-				findpath_bfs();
-				break;
-			case 'DFS':
-				findpath_dfs();
-				break;
-			case 'A* - H1':
-				findpath_a("H1");
-				break;
-			case 'A* - H2':
-				findpath_a("H2");
-				break;
-			case 'A* - (H1+H2)/2':
-				findpath_a("H1+H2");
-				break;
-		}
+		snake_brain()
 	}else{
 		//we still have moves left, so move the snake to the next square.
 		move(moves.shift());
@@ -172,6 +311,7 @@ function findpath_bfs(){
 		}
 	}
 }
+
 
 //Depth First Search
 function findpath_dfs(){
