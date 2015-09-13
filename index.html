@@ -1,39 +1,33 @@
 <html>
-<head><title>AI Snake Game</title>
-	<meta charset="UTF-8">
-	<script src="snake.js"></script>
-</head>
-<body onload="init();">
+	<head>
+		<title>AI Snake Game</title>
+		<meta charset="UTF-8">
+		<script src="snake.js"></script>
+	</head>
+	<body onload="init();">
 
-<h1>Snake!</h1>
+		<h1>Snake!</h1>
 
-<canvas id="canvas" width="300" height="300"></canvas>
+		<canvas id="canvas" width="300" height="300"></canvas>
 
-<div id="stats" style="float:right;width:300px;border-style:solid;border-width:5px;border-color:red;">
-	Food Eaten: <span id="food_val"></span><br>
-	Moves: <span id="moves_val"></span><br>
-	Average Moves: <span id="avg_moves_val"></span><br>
-	<div style="color:white;">Average Nodes Processed: <span id="avg_nodes_val"></span><br></div>
-</div>
+		<div id="stats" style="float:right;width:300px;border-style:solid;border-width:5px;border-color:red;">
+			Food Eaten: <span id="food_val"></span><br>
+			Moves: <span id="moves_val"></span><br>
+			Average Moves: <span id="avg_moves_val"></span><br>
+		</div>
 
-<div>
-	<input type="button" value="Start" onclick="start();">&nbsp;&nbsp;
-	<input type="button" value="Stop" onclick="stop();">
-</div>
+		<div>
+			<input type="button" value="Start" onclick="start();">&nbsp;&nbsp;
+			<input type="button" value="Stop" onclick="stop();">
+		</div>
 
-<h2>What are all these squares?</h2>
-<ol>
-	<li>The green square is the head of the snake!</li>
-	<li>The purple squares are the body of the snake!</li>
-	<li>The blue square is the end of the tail of the snake!</li>
-	<li>The red square is a juicy apple, every apple you collect, the snake will grow larger. As will your score!</li>
-	<li>The brown squares are tree stumps that you will have to get around!</li>
-</ol>
-
-<h2>How it works</h2>
-<p>This application uses web workers to offload the processing.<br>
-This allows the browser UI to remain responsive even though CPU intensive operations may be taking place.<br> 
-The results are drawn on the screen using a canvas element.</p>
-
-</body>
+		<h2>What are all these squares?</h2>
+		<ol>
+			<li>The green square is the head of the snake!</li>
+			<li>The purple squares are the body of the snake!</li>
+			<li>The blue square is the end of the tail of the snake!</li>
+			<li>The red square is a juicy apple, every apple you collect, the snake will grow larger. As will your score!</li>
+			<li>The brown squares are tree stumps that you will have to get around!</li>
+		</ol>
+	</body>
 </html>
