@@ -3,7 +3,7 @@
 ### How to run
 Open the index.html in chrome.  
 Press start to start the game.  
-Any time you change your snake, you will need to reload the page!  
+Any time you change your snake, don't forget to save your file, and then you will need to reload the page!  
 
 ## Challenge #1
 
@@ -12,7 +12,7 @@ Any time you change your snake, you will need to reload the page!
   * Can you make the snake move up?  
   * Can you make the snake move to the right?  
 3. Why can the snake not move to the right?  
-
+4. If your board dissapears don't forget to check all your curly braces-> { } !!!
 
 
 ## Challenge #2
@@ -99,7 +99,27 @@ So now our snake brain can move in the direction of the food, but what if the sn
 It is almost like we need our snake brain to become **smarter**!  
 To make the the brain smarter we will need to ask more **questions**.  
 
-Here is an example of more questions for your school days.  
+But just asking more questions might not be enough!  
+Sometimes you will need to ask questions in questions.  
+There are some questions you only ask based on the result of the first.  
+Example:  
+
+```javascript
+if (I_am_hungry()) {
+	if (I_can_find_an_apple()) {
+		eat_apple()
+	}
+}
+else {
+	play_outside()
+}
+```
+
+In this last example, you only care about the question of finding apples if you are hungry.  
+If you are hungry you want to know if there are apples.  
+If you are not hungry you only want to play outside and don't care about apples.  
+
+Here is an example of questions in questions for your school days.  
 
 ```javascript
 if (today_is_a_school_day()) {
@@ -131,11 +151,11 @@ if (apple_is_above()) {
 ```
 
 1. Did you understand this?
-⋅⋅* First we check to see if the apple is up.
-⋅⋅* Then we check to see if there is no tail above us.
-⋅⋅* Then we can move up!
-⋅⋅* But if there was some snake tail above us.
-⋅⋅* Then we move to the left.
+  * First we check to see if the apple is up.
+  * Then we check to see if there is no tail above us.
+  * Then we can move up!
+  * But if there was some snake tail above us.
+  * Then we move to the left.
 2. What is wrong with moving only to the left?
 3. How could you add this to the other directions?
 4. What if the backup direction has tail there also?
