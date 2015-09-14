@@ -8,8 +8,14 @@ function snake_brain() {
 	if (apple_is_above()) {
 		move_up()
 	}
-	else {
+	else if (apple_is_below()) {
 		move_down()
+	}
+	else if (apple_is_left()) {
+		move_left()
+	}
+	else {
+		move_right()
 	}
 }
 
