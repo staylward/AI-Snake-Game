@@ -14,16 +14,16 @@ All of the code below this should not be touched.
 If you like you can have a look, but these are here to help you snake get the apple!
 **/
 
-//the canvas used to draw the state of the game
-var ctx;
-
 //config object used to set the parameters of the game. This object is passed to the worker thread to initialize it
 var config = new Object();
 config.grid_size = 20;
-config.number_obstacles = 5;
+config.number_obstacles = 0;
 config.square_size = 13;
 config.snake_length = 5;
 config.runTimeout = 0;
+
+//the canvas used to draw the state of the game
+var ctx;
 
 //some local variables used by the worker to track it's state.
 var stats = new Object();
