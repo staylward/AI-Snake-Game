@@ -5,7 +5,106 @@ Tell the snake where to go!
 **/
 
 function snake_brain() {
-	move_left()
+	if (apple_is_above()) {
+		if (tail_is_not_above()) {
+			move_up()
+		}
+		else if (apple_is_left) {
+			if (tail_is_not_left()) {
+				move_left()
+			}
+			else if (tail_is_not_right()) {
+				move_right()
+			}
+			else if (tail_is_not_below()) {
+				move_down()
+			}
+		}
+		else if (tail_is_not_right()) {
+			move_right()
+		}
+		else if (tail_is_not_left()) {
+			move_left()
+		}
+		else if (tail_is_not_below()) {
+			move_down()
+		}
+	}
+	else if (apple_is_below()) {
+		if (tail_is_not_below()) {
+			move_down()
+		}
+		else if (apple_is_left) {
+			if (tail_is_not_left()) {
+				move_left()
+			}
+			else if (tail_is_not_right()) {
+				move_right()
+			}
+			else if (tail_is_not_above()) {
+				move_up()
+			}
+		}
+		else if (tail_is_not_right()) {
+			move_right()
+		}
+		else if (tail_is_not_left()) {
+			move_left()
+		}
+		else if (tail_is_not_above()) {
+			move_up()
+		}
+	}
+	else if (apple_is_left()) {
+		if (tail_is_not_left()) {
+			move_left()
+		}
+		else if (apple_is_above()) {
+			if (tail_is_not_above) {
+				move_up()
+			}
+			else if (tail_is_not_below()) {
+				move_down()
+			}
+			else if (tail_is_not_right()) {
+				move_right()
+			}
+		}
+		else if (tail_is_not_below()) {
+			move_down()
+		}
+		else if (tail_is_not_above()) {
+			move_up()
+		}
+		else if (tail_is_not_right()) {
+			move_right()
+		}
+	}
+	else if (apple_is_right()) {
+		if (tail_is_not_right()) {
+			move_right()
+		}
+		else if (apple_is_above()) {
+			if (tail_is_not_above) {
+				move_up()
+			}
+			else if (tail_is_not_below()) {
+				move_down()
+			}
+			else if (tail_is_not_right()) {
+				move_right()
+			}
+		}
+		else if (tail_is_not_below()) {
+			move_down()
+		}
+		else if (tail_is_not_above()) {
+			move_up()
+		}
+		else if (tail_is_not_left()) {
+			move_left()
+		}
+	}
 }
 
 
