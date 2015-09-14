@@ -25,24 +25,24 @@ In programming we ask the computer questions with the word **if**!
 Here is an example you might ask every day.  
   
 ```javascript
-if (today_is_a_school_day()) {  
-	go_to_school()  
-}  
-else {  
-	enjoy_the_weekend()  
-}  
+if (today_is_a_school_day()) {
+	go_to_school()
+}
+else {
+	enjoy_the_weekend()
+}
 ```
   
 Just like you would ask if today is a school day, your snake will want to know where the apple is!  
 Here is an example of the snake checking if the apple is above or below it's head.  
   
 ```javascript
-if (apple_is_above()) {  
-	move_???()  
-}  
-else {  
-	move_down()  
-}  
+if (apple_is_above()) {
+	move_???()
+}
+else {
+	move_down()
+}
 ```
   
 1. What would you replace the **???** with in this last example?
@@ -57,15 +57,15 @@ For this we will need to have more questions for our snake brain!
 In this following example, we will ask more questions about our week.  
 
 ```javascript
-if (today_is_a_school_day()) {  
-	go_to_school()  
-}  
-else if (today_is_Saturday()) {  
-	go_to_sport()  
-}  
-else {  
-	go_to_the_beach()  
-}  
+if (today_is_a_school_day()) {
+	go_to_school()
+}
+else if (today_is_Saturday()) {
+	go_to_sport()
+}
+else {
+	go_to_the_beach()
+}
 ```
 
 In the example above, if the day was Monday, Tuesday, Wednesday, Thursday, or Friday, you would go to school.  
@@ -75,18 +75,18 @@ And if it was not any of those school days and it was not Saturday, you would go
 We can do the same thing with our snake brain!  
 
 ```javascript
-if (apple_is_above()) {  
-	move_???()  
-}  
-else if (apple_is_below()) {  
-	move_???()  
-}  
-else if (apple_is_left()) {  
-	move_???()  
-}  
-else {  
-	move_???()  
-}  
+if (apple_is_above()) {
+	move_???()
+}
+else if (apple_is_below()) {
+	move_???()
+}
+else if (apple_is_left()) {
+	move_???()
+}
+else {
+	move_???()
+}
 ```
 
 1. Update the missing ??? commands and then put this in the snake brain.
@@ -102,32 +102,32 @@ To make the the brain smarter we will need to ask more **questions**.
 Here is an example of more questions for your school days.  
 
 ```javascript
-if (today_is_a_school_day()) {  
-	if (today_is_a_mufti_day()) {  
-		wear_casual_cloths()  
-	}  
-	else {  
-		wear_school_uniform()  
-	}  
-	go_to_school()  
-}  
-else {  
-	enjoy_the_weekend()  
-}  
+if (today_is_a_school_day()) {
+	if (today_is_a_mufti_day()) {
+		wear_casual_cloths()
+	}
+	else {
+		wear_school_uniform()
+	}
+	go_to_school()
+}
+else {
+	enjoy_the_weekend()
+}
 ```
 
 We can do the same thing with our snake brain!  
 Here is an example to get you started.  
 
 ```javascript
-if (apple_is_above()) {  
-	if (tail_is_not_above()) {  
-		move_up()  
-	}  
-	else {  
-		move_left()  
-	}  
-}  
+if (apple_is_above()) {
+	if (tail_is_not_above()) {
+		move_up()
+	}
+	else {
+		move_left()
+	}
+}
 ```
 
 1. Did you understand this?
