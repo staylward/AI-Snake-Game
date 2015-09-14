@@ -9,8 +9,8 @@ Any time you change your snake, you will need to reload the page!
 
 1. Currently the snake will only move to the left.  
 2. Can you try make the snake move down?  
-⋅⋅* Can you make the snake move up?  
-⋅⋅* Can you make the snake move to the right?  
+  * Can you make the snake move up?  
+  * Can you make the snake move to the right?  
 3. Why can the snake not move to the right?  
 
 
@@ -25,20 +25,20 @@ In programming we ask the computer questions with the word **if**!
 Here is an example you might ask every day.  
   
 if (today_is_a_school_day()) {  
-	go_to_school()  
+   go_to_school()  
 }  
 else {  
-	enjoy_the_weekend()  
+   enjoy_the_weekend()  
 }  
   
 Just like you would ask if today is a school day, your snake will want to know where the apple is!  
 Here is an example of the snake checking if the apple is above or below it's head.  
   
 if (apple_is_above()) {  
-	move_???()  
+   move_???()  
 }  
 else {  
-	move_down()  
+   move_down()  
 }  
   
 1. What would you replace the **???** with in this last example?
@@ -53,13 +53,13 @@ For this we will need to have more questions for our snake brain!
 In this following example, we will ask more questions about our week.  
 
 if (today_is_a_school_day()) {  
-	go_to_school()  
+   go_to_school()  
 }  
 else if (today_is_Saturday()) {  
-	go_to_sport()  
+   go_to_sport()  
 }  
 else {  
-	go_to_the_beach()  
+   go_to_the_beach()  
 }  
 
 In the example above, if the day was Monday, Tuesday, Wednesday, Thursday, or Friday, you would go to school.  
@@ -69,16 +69,16 @@ And if it was not any of those school days and it was not Saturday, you would go
 We can do the same thing with our snake brain!  
 
 if (apple_is_above()) {  
-	move_???()  
+   move_???()  
 }  
 else if (apple_is_below()) {  
-	move_???()  
+   move_???()  
 }  
 else if (apple_is_left()) {  
-	move_???()  
+   move_???()  
 }  
 else {  
-	move_???()  
+   move_???()  
 }  
 
 1. Update the missing ??? commands and then put this in the snake brain.
@@ -94,28 +94,28 @@ To make the the brain smarter we will need to ask more **questions**.
 Here is an example of more questions for your school days.  
 
 if (today_is_a_school_day()) {  
-	if (today_is_a_mufti_day()) {  
-		wear_casual_cloths()  
-	}  
-	else {  
-		wear_school_uniform()  
-	}  
-	go_to_school()  
+   if (today_is_a_mufti_day()) {  
+      wear_casual_cloths()  
+   }  
+   else {  
+      wear_school_uniform()  
+   }  
+   go_to_school()  
 }  
 else {  
-	enjoy_the_weekend()  
+   enjoy_the_weekend()  
 }  
 
 We can do the same thing with our snake brain!  
 Here is an example to get you started.  
 
 if (apple_is_above()) {  
-	if (tail_is_not_above()) {  
-		move_up()  
-	}  
-	else {  
-		move_left()  
-	}  
+   if (tail_is_not_above()) {  
+      move_up()  
+   }  
+   else {  
+      move_left()  
+   }  
 }  
 
 1. Did you understand this?
