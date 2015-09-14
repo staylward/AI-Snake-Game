@@ -5,7 +5,12 @@ Tell the snake where to go!
 **/
 
 function snake_brain() {
-	move_left()
+	if (apple_is_above()) {
+		move_up()
+	}
+	else {
+		move_down()
+	}
 }
 
 
