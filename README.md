@@ -85,8 +85,59 @@ else {
 2. Is your snake hungry now?
 3. How long can the snake get before he runs into a problem?
 
+## Challenge #4
 
+So now our snake brain can move in the direction of the food, but what if the snake tail gets in the way?  
+It is almost like we need our snake brain to become **smarter**!  
+To make the the brain smarter we will need to ask more **questions**.  
 
+Here is an example of more questions for your school days.  
 
+if (today_is_a_school_day()) {  
+	if (today_is_a_mufti_day()) {  
+		wear_casual_cloths()  
+	}  
+	else {  
+		wear_school_uniform()  
+	}  
+	go_to_school()  
+}  
+else {  
+	enjoy_the_weekend()  
+}  
 
+We can do the same thing with our snake brain!  
+Here is an example to get you started.  
+
+if (apple_is_above()) {  
+	if (tail_is_not_above()) {  
+		move_up()  
+	}  
+	else {  
+		move_left()  
+	}  
+}  
+
+1. Did you understand this?
+⋅⋅* First we check to see if the apple is up.
+⋅⋅* Then we check to see if there is no tail above us.
+⋅⋅* Then we can move up!
+⋅⋅* But if there was some snake tail above us.
+⋅⋅* Then we move to the left.
+2. What is wrong with moving only to the left?
+3. How could you add this to the other directions?
+4. What if the backup direction has tail there also?
+
+## Challenge #Extra-Time
+
+This one can be really hard, but it only uses what you have already learned!  
+In your snake.js file, search further down into the extra code further down.  
+Look for the following line: 
+**config.number_obstacles = 0;**  
+It should be only a bit further down from your snake brain.  
+Change the 0 at the end to a 5 (Or more if you are **brave**).  
+
+1. What has changed?
+2. How can you avoid all the obstacles?
+3. How long can your snake become?
 
